@@ -1,0 +1,50 @@
+Response Headers:
+"expires":"Tue, 29 Jan 2019 17:57:34 GMT"
+The date and time when the results should be considered stale and a new request should be made.
+
+"date":"Tue, 29 Jan 2019 17:57:34 GMT"
+The date and time the data was sent.
+
+"cache-control":"private, max-age=0, must-revalidate, no-transform"
+The cache must be single user and not shared. It's max age is 0 seconds. It must revalidate so it has to check if expired before it is used, expired cache should not be used. The content type cannot be changed because of the no-transform directive.
+
+"etag":"\"IUREzboS_XZycecz4xfru1ipYfo/wLhsi6EHU3swnW3fBKziKNBHwtk\""
+The MD5 hash of the entity for modication checking purposes.
+
+
+"vary":"Origin, X-Origin"
+Origin and X-Origin are used when determining if a cached response can be used.
+
+"content-type":"application/json; charset=UTF-8"
+The media being sent is a json object encoded with UTF-8.
+
+
+"x-content-type-options":"nosniff"
+Blocks requests of type "style" if MIME is not "text/css" and "script" if MIME type is not a JavaScript MIME type.
+
+"x-frame-options":"SAMEORIGIN"
+Specifies that the frame for the page must have the same origin as the page itself in order to be rendered. This is a security feature.
+
+"x-xss-protection":"1; mode=block"
+Prevents rendering of pages if cross-site scripting is detected.
+
+"content-length":"34168"
+Total number of bytes sent to recipient.
+
+"server":"GSE"
+Information on the server. I'm guessing Google Server Entity? Or Google Server Environment?
+
+"alt-svc":"quic=\":443\"; ma=2592000; v=\"44,43,39\""
+Alternative ways to reach the server.
+
+"connection":"close"
+The server wanted to close the connection.
+
+Request Headers:
+"Accept":"application/json, text/plain, */*"
+What the client is willing to accept. In this case json objects, plain text, and any MIME type.
+
+"User-Agent":"axios/0.18.0"
+Letting the server know the client is connecting via axios version 0.18.0.
+
+I used https://developer.mozilla.org/en-US/docs/Web/Headers as a reference.
